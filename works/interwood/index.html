@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ru"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Інтервудкоммерц</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Load CSS Compilled without JS -->
+	<noscript><link rel="stylesheet" href="libs/normalize-css/normalize.css"></noscript>
+	<noscript><link rel="stylesheet" href="css/main.min.css"></noscript>
+	
+	<!-- laoad check and load svg sprite via ajax request -->
+	<script>
+		var svgLoader = (function () {
+			function storageChecker () {
+				var svgSprite = window.localStorage.getItem('svgSprite');
+	
+				if ( svgSprite ) {
+					insertSvg (svgSprite);
+					return;
+				}
+				ajaxSpriteLoad();
+			};
+	
+			function ajaxSpriteLoad () {
+	
+				try {
+					var xmlhttp = new XMLHttpRequest();
+	
+					xmlhttp.onreadystatechange = function() {
+						var container;
+	
+						if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+							window.localStorage.setItem('svgSprite', xmlhttp.responseText);
+							insertSvg (xmlhttp.responseText);
+						};
+					};
+					xmlhttp.open("GET","img/sprite/sprite-svg.svg",true);
+					xmlhttp.send();
+	
+				} catch (error) {
+	
+					console.log(error.name + ' ' + error.message)
+	
+				};
+				
+			};
+	
+			function insertSvg (sprite) {
+				var container = document.createElement('div');
+				container.innerHTML = sprite;
+				document.addEventListener( 'DOMContentLoaded', function () {
+					document.body.appendChild(container);
+				});
+			};
+	
+			return {
+				start: function () {
+					storageChecker();
+				}
+			}
+		})();
+		
+		svgLoader.start();
+	</script>
+</head>
+
+<body>
+	
+	<!-- Header -->
+	<header class="main-header">
+		<div class="main-header__top-container">
+			<figure class="main-header__logo-wrap">
+				<a href="/index.html" title="interwoodkommertz">
+					<svg class="icon_logo" width="113.427px" height="19.818px" viewBox="0 0 113.427 19.818">
+						<use xlink:href="#icon_logo"></use>
+					</svg>
+				</a>
+			</figure>
+			<div class="main-header__language-wrap">
+				<span class="active">Ukr</span>
+				<span>Eng</span>
+			</div>
+		</div>
+	
+		<!-- title -->
+		<div class="main-header__title-wrap">
+			<h1 class="main-header__title">Виробництво пиломатеріалів з твердолистяних порід деревини</h1>
+		</div><!-- end title -->
+		
+			<!-- main navigation -->
+		<nav class="main-navigation">
+			<div class="main-navigation__buttons-wrap">
+				<button class="main-navigation__menu-button menu">
+					<svg class="icon_menu" width="30px" height="20px" viewBox="0 0 30 20">
+						<use xlink:href="#icon_menu"></use>
+					</svg>
+				</button>
+				<button class="main-navigation__menu-button close">
+					<svg class="icon_close" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32">
+						<use xlink:href="#icon_close"></use>
+					</svg>
+				</button>
+			</div>
+			<ul class="main-navigation__navigation-container">
+				<li class="main-navigation__navigation-item"><a href="">Головна</a></li>
+				<li class="main-navigation__navigation-item"><a href="">Компанія</a></li>
+				<li class="main-navigation__navigation-item"><a href="">Продукція</a></li>
+				<li class="main-navigation__navigation-item"><a href="">Склад готової продукції</a></li>
+				<li class="main-navigation__navigation-item"><a href="">Новини</a></li>
+				<li class="main-navigation__navigation-item"><a href="">Географія продажів</a></li>
+				<li class="main-navigation__navigation-item"><a href="">Контакти</a></li>
+			</ul>
+		</nav><!-- end main navigation -->
+			
+	
+		<div class="main-header__scroll-wrap">
+			<p>scroll down</p>
+			<figure class="">
+				<svg class="icon_scroll" width="23.026px" height="24.005px" viewBox="0 0 23.026 24.005">
+					<use xlink:href="#icon_scroll"></use>
+				</svg>
+			</figure>
+		</div>
+		
+	</header>
+	<!-- end header -->
+
+	<main class="main">
+		<!-- section benifits -->
+		<section class="company">
+			<header class="company__header">
+				<div class="company__heading-wrap heading-wrap">
+					<h2 class="company__heading heading">Наша компанія</h2>
+					<div class="divider">
+						<hr>
+						<div class="dots-container">
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</div>
+					</div>
+				</div>
+				<p class="company__subtitle subtitle">Найголовніше про нашу компанію</p>
+			</header>
+			
+			<div class="company__info">
+				<p class="company__name">ТОВ "Інтервудкоммерц"</p>
+				<p class="company__description">є підприємством повного циклу виробництва та  лідером у галузі пиломатеріалів з твердолистяних порід деревини: 
+					<span class='accent-text'>буку, дубу та ясеня.</span>
+				</p>
+				<p class="company__benefits">Підприємство має багаторічний міжнародний досвід роботи та входить до п’ятірки найбільших експортерів пиломатеріалів за результатами 2014р. Компанія є членом правління Всеукраїнської Асоціації Деревообробних Підприємств та приймає активну участь у розвитку галузі.</p>
+				<div class="company__more-info">
+					<a class="more-button" href="#">Детальніше</a>
+				</div>
+			</div>
+		</section>
+		<!-- end section benifits -->
+
+		<!-- section production -->
+		<section class="production">
+			<header class="production__header">
+				<div class="production__heading-wrap heading-wrap">
+					<h2 class="production__heading heading">Виробництво</h2>
+					<div class="divider">
+						<hr>
+						<div class="dots-container">
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</div>
+					</div>
+				</div>
+				<p class="production__subtitle subtitle">Наша історія становлення</p>
+			</header>
+		
+			<div class="production__text-wrap">
+				<p>Наразі компанія здійснює діяльність на базі трьох виробничих об’єктів.</p>
+				<p>Західна Україна (м. Хуст, м. Стрий) – виробничій комплекс з обробки буку та дубу.</p>
+				<p>Центральна Україна (с. Поташ, Маньківський р-н) – виробничий комплекс з обробки дубу та ясеню.</p>
+			</div>
+		
+			<div class="production__map-wrap">
+				<figure class="production__map">
+					<img src="img/map.png" alt='map with production locations'>
+				</figure>
+			</div>
+		
+			<div class="production__text-wrap">
+				<p>Розпиловка здійснюється на автоматичних лініях KANALI та MEBOR. Сушіння пиломатеріалів відбувається у сушильних камерах AUREKS та KATRES.</p>
+				<p>Потужність розпилювання лісосировини становить від 700 до 1200 м<sup>3</sup> в місяць. </p>
+				<p>Загальна чисельність працівників підприємства - 83 особи.</p>
+			</div>
+		</section>
+		<!-- end section production -->
+
+		<!-- sectionsearch quality -->
+		<section class="quality">
+			<header class="quality__header">
+				<div class="quality__heading-wrap heading-wrap">
+					<h2 class="quality__heading heading">Якість</h2>
+					<div class="divider">
+						<hr>
+						<div class="dots-container">
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</div>
+					</div>
+				</div>
+				<p class="quality__subtitle subtitle">Те,чому ми найкращі на ринку високоякісної деревини</p>
+			</header>
+			
+			<div class="quality__content row">
+				<!-- column with image -->
+				<figure class="quality__image-wrap column">
+					<img src="img/quality-image.jpg" alt="well done wood">
+					<div class="image-overlay"></div>
+					<figure class="logo-wrap">
+						<svg class="icon_logo" width="113.427px" height="19.818px" viewBox="0 0 113.427 19.818">
+							<use xlink:href="#icon_logo"></use>
+						</svg>
+					</figure>
+				</figure> <!-- end column with image -->
+				<!-- column with text -->
+				<div class="quality__description-wrap column">
+					<div class="quality__description description">
+						<div class="dots-container">
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</div>
+						<p class="quality__description-text description-text">Компанія має тривалий досвід постачання у різні країни, та добре знається на вимогах до продукції та особливостях оформлення документів для кожної з країн імпортерів.</p>
+						<p class="accent-text">Географія збуту: країни Європи, Азіатсько – Тихоокеанського регіону та Скандинавії.</p>
+					</div>
+				</div><!-- end column with text -->
+			</div>
+		</section>
+		<!-- end section quality  -->
+		
+		<!-- section logistic -->
+		<section class="logistic">
+			<header class="logistic__header">
+				<div class="logistic__heading-wrap heading-wrap">
+					<h2 class="logistic__heading heading">Логістика</h2>
+					<div class="divider">
+						<hr>
+						<div class="dots-container">
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</div>
+					</div>
+				</div>
+				<p class="logistic__subtitle subtitle">Те,чому ми найкращі на ринку високоякісної деревини</p>
+			</header>
+		
+			<div class="logistic__content row">
+				<!-- column with image -->
+				<figure class="logistic__image-wrap column">
+					<img src="img/logistic-image.jpg" alt="beautyfull forest">
+					<figure class="logo-wrap">
+						<svg class="icon_flower" width="135.606px" height="137.069px" viewBox="0 0 135.606 137.069">
+							<use xlink:href="#icon_flower"></use>
+						</svg>
+					</figure>
+				</figure> <!-- end column with image -->
+				<!-- column with text -->
+				<div class="logistic__description-wrap column">
+					<div class="logistic__description description">
+						<div class="dots-container">
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</div>
+						<p class="logistic__description-text description-text">ІНТЕРВУДКОММЕРЦ, маючи власний відділ логістики, допомагає клієнтам в організації доставки товару у будь яку країну світу.</p>
+						<p class="accent-text">Комплекс логістичних послуг включає в себе:
+							<br>1. Повний документальний супровід (сертифікація, митне оформлення); 
+							<br>2. Пошук транспорту, організацію перевезення за оптимальними цінами.</p>
+					</div>
+				</div><!-- end column with text -->
+			</div>
+		</section>
+		<!-- section logistic -->
+
+		<!-- section history -->
+		<section class="history">
+			<header class="history__header">
+				<div class="history__heading-wrap heading-wrap">
+					<h2 class="history__heading heading">Історія</h2>
+					<div class="divider">
+						<hr>
+						<div class="dots-container">
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</div>
+					</div>
+				</div>
+				<p class="history__subtitle subtitle">Наш початок</p>
+			</header>
+		
+			<div class="history__content-wrap">
+				<div class="history__text-wrap">
+					<p class="history__text">
+						Історія діяльності компанії бере свій початок з заснування офіційного представництва «Ді –Ел – Ейч Нордікс А/С» в Україні –одного з найбільших постачальників матеріалів з деревини у Європі.
+					</p>
+				</div>
+				<div class="history__text-wrap">
+					<p class="history__text">
+						Заснування компанії «ІНТЕРВУДКОММЕРЦ» було логічним рішенням з досягненням компанією високих показників виробництва пиломатеріалів, а також зростання зовнішньо-економічної торгівлі та розвитку партнерської мережі.
+					</p>
+				</div>
+			</div>
+		</section>
+		<!-- end section history -->
+
+		<!--section news -->
+		<section class="news">
+			<header class="news__header">
+				<div class="news__heading-wrap heading-wrap">
+					<h2 class="news__heading heading">Новини</h2>
+					<div class="divider">
+						<hr>
+						<div class="dots-container">
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</div>
+					</div>
+				</div>
+				<p class="news__subtitle subtitle">Наша історія становлення</p>
+			</header>
+			<div class="news__content">
+				<!-- first news -->
+				<article class="news__news">
+					<figure class="news__image"><img src="img/news-1.jpg" alt="Quality control"></figure>
+					<div class="news__description">
+						<div class="news__date">14.05.2015</div>
+						<h3 class="news__heading">Контроль якості продукції</h3>
+						<div class="dots-container">
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</div>
+						<p class="news__text">ТОВ «ІНТЕРВУДКОММЕРЦ» перший експортер, який запровадив систему  контролю якості під час відвантаження продукції до кінцевого споживача у вигляді інспекції товару перед його завантаженням до контейнеру. Клієнту  надається детальна специфікація  та фотозвіт відвантаженого матеріалу.  Відкритість інформації з боку компанії допомогла суттєво поліпшити комунікацію з існуючими партнерами та залучити нових клієнтів.</p>
+						<div class="news__more-wrap">
+							<a class="more-button" href="#">читати далі</a>
+						</div>
+					</div>
+				</article><!-- end first news -->
+				<!-- second news -->
+				<article class="news__news">
+					<figure class="news__image"><img src="img/news-2.jpg" alt="Quality control"></figure>
+					<div class="news__description">
+						<div class="news__date">10.04.2015</div>
+						<h3 class="news__heading">Мораторій на експорт деревини</h3>
+						<div class="dots-container">
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</div>
+						<p class="news__text">9 квітня 2015р  Верховна Рада України  прийняла десятирічний мораторій на експорт необробленої деревини. Документ передбачає тимчасову заборону на експорт необробленої деревини, а саме ліс круглий у вигляді колод, стовпів, з транспортною вологістю більше 22%, і пиломатеріалів товщиною більше 70 міліметрів з транспортною вологістю більше 22% строком 10 років.</p>
+						<div class="news__more-wrap">
+							<a class="more-button reverse" href="#">читати далі</a>
+		
+							<a class="more-button reverse more" href="#">всі новини
+								<span class="icon-wrap">
+									<svg class="icon_menu" width="30px" height="20px" viewBox="0 0 30 20">
+										<use xlink:href="#icon_menu"></use>
+									</svg>
+								</span>
+							</a>
+						</div>
+					</div>
+				</article><!-- end second news -->
+			</div>
+		</section>
+		<!-- end section news -->
+
+		<!-- section sign -->
+		<section class="sign">
+			<h3 class="sign__heading">Підпишіться на наші розсилки або почніть з нами співпрацю</h3>
+			<form class="sign__form" id="sign_form">
+				<input type="text" id="form_name" name="name" required placeholder="Ім'я">
+				<input type="email" id="form_mail" name="mail" required placeholder='E-mail'>
+				<input type="submit" id="send" value='Надіслати'>
+				<label class="sign__form__message" for="form_name"></label>
+				<label class="sign__form__message" for="form_mail"></label>
+			</form>
+		</section>
+		<!-- end section sign -->
+	</main>
+
+	<!-- main footer -->
+	<footer class="footer">
+		<ul class="footer__links-wrap">
+			<li class="footer__links-item"><a href="">Головна</a></li>
+			<li class="footer__links-item"><a href="">Компанія</a></li>
+			<li class="footer__links-item"><a href="">Продукція</a></li>
+			<li class="footer__links-item"><a href="">Склад готової продукції</a></li>
+			<li class="footer__links-item"><a href="">Новини</a></li>
+			<li class="footer__links-item"><a href="">Географія продажів</a></li>
+			<li class="footer__links-item"><a href="">Контакти</a></li>
+		</ul>
+		<div class="footer__phone-wrap">
+			<span class="phone">+38 067 567 56 76</span>
+			<span class="phone">+38 067 567 56 76</span>
+		</div>
+		<figure class="footer__logo-wrap">
+			<svg class="icon_logo" width="113.427px" height="19.818px" viewBox="0 0 113.427 19.818">
+				<use xlink:href="#icon_logo"></use>
+			</svg>
+		</figure>
+	</footer>
+	<!-- end main footer -->
+
+	<!-- SVG sprite (Hidden)-->
+	
+	<!-- end SVG sprite-->
+
+	<!--[if lt IE 9]>
+	<script src="/libs/html5shiv/es5-shim.min.js"></script>
+	<script src="/libs/html5shiv/html5shiv.min.js"></script>
+	<script src="/libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="/libs/respond/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Loader for CSS  -->
+	<script>
+			//Load Libs CSS
+			var ms=document.createElement("link");ms.rel="stylesheet";
+			ms.href="/libs/normalize-css/normalize.css";document.getElementsByTagName("head")[0].appendChild(ms);
+			
+			//User Styles + Media Queries
+			var ms=document.createElement("link");ms.rel="stylesheet";
+			ms.href="css/main.min.css";document.getElementsByTagName("head")[0].appendChild(ms);
+	</script>
+
+	<!-- Loader for Scripts -->
+	<script>var scr = {"scripts":[
+			{"src" : "/libs/modernizr/modernizr-2.8.3.min.js", "async" : false},
+			{"src" : "/libs/jquery/jquery.min.js", "async" : false},
+			{"src" : "/libs/jquery-validation/jquery.validate.min.js", "async" : false},
+			{"src" : "libs/jquery-placeholder/jquery.placeholder.min.js", "async" : false},
+			{"src" : "js/main.js", "async" : false},
+			]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
+	</script>
+
+</body>
+</html>

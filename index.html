@@ -16,7 +16,7 @@
 	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
 
-	<!-- preventing huge svg -->
+	<!-- preventing huge svg
 	<style>
 		svg {
 			width: 30px;
@@ -24,181 +24,109 @@
 			margin: 5px;
 			fill: white;
 		}
-	</style>
+	</style>-->
 </head>
 
 <body>
 	<div class="graphic-wrapper clearfix">
 
 		<div class="content-wrapper">
-			<!-- Header -->
-			<header class="main-header">
-				<div class="main-header--wrapper">
-					<h1 class="main-header--title">Георгий Борзилов</h1>
-					<p class="main-header--subtitle">
-						<!-- <span class="animated flash">начинающий</span>
-						<br> -->
-						<span>frontend developer</span>
-					</p>
-				</div>
-				
-			</header>
-			<!-- end header -->
-
-			<!-- main section -->
-			<main class="main-content">
-				<div class="main-content--wrapper">
+			<div class="content-wrapper__inner">
+				<!-- Header -->
+				<header class="main-header">
+					<div class="main-header__wrapper">
+						<h1 class="main-header__title">Георгий Борзилов</h1>
+						<p class="main-header__subtitle">
+							<!-- <span class="animated flash">начинающий</span>
+							<br> -->
+							<span>frontend developer</span>
+						</p>
+					</div>
 					
-					<p class="main-content--text">
-						<span class='greetings'>Здравствуйте!</span>
-						Мой сайт только в процессе разработки, поэтому пока могу предложить посмотреть несколько проектов сверстанных мной.
-					</p>
-					<!-- works -->
-					<ul class="main-content--work work">
-						<li class="work--item">
-							<img src="img/work_thumb/unique.jpg" alt="Пример сайта">
-							<div class="overlay">
-								<a href="works/unique-tech/index.html">Посмотреть</a>
-							</div>
-						</li>
-						<li class="work--item">
-							<img src="img/work_thumb/bicycle.jpg" alt="Пример сайта">
-							<div class="overlay">
-								<a href="works/bicycle/index.html">Посмотреть</a>
-							</div>
-						</li>
-						<li class="work--item">
-							<img src="img/work_thumb/axit.jpg" alt="Пример сайта">
-							<div class="overlay">
-								<a href="works/axit/index.html">Посмотреть</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			
-			</main><!-- end main section  -->
+				</header>
+				<!-- end header -->
+
+				<!-- main section -->
+				<main class="main-content">
+					<div class="main-content__wrapper">
+						
+						<p class="main-content__text">
+							<span class='main-content__greetings'>Здравствуйте!</span>
+							Мой сайт только в процессе разработки, поэтому пока могу предложить посмотреть несколько проектов сверстанных мной.
+						</p>
+						<!-- works -->
+						<ul class="main-content__work work">
+							<li class="work__item">
+								<img src="img/work_thumb/interwood.jpg" alt="Пример сайта">
+								<div class="work__overlay">
+									<a href="works/interwood/index.html">Посмотреть</a>
+								</div>
+							</li>
+							<li class="work__item">
+								<img src="img/work_thumb/unique.jpg" alt="Пример сайта">
+								<div class="work__overlay">
+									<a href="works/unique-tech/index.html">Посмотреть</a>
+								</div>
+							</li>
+							<li class="work__item">
+								<img src="img/work_thumb/bicycle.jpg" alt="Пример сайта">
+								<div class="work__overlay">
+									<a href="works/bicycle/index.html">Посмотреть</a>
+								</div>
+							</li>
+							<li class="work__item">
+								<img src="img/work_thumb/axit.jpg" alt="Пример сайта">
+								<div class="work__overlay">
+									<a href="works/axit/index.html">Посмотреть</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				
+				</main><!-- end main section  -->
+			</div>
 		</div>
 		
-		<figure class="sketch cv">
-			<div class="cv--text"></div>
-			<div class="cv--arrow"></div>
+		<figure class="cv">
+			<div class="cv__text"></div>
+			<div class="cv__arrow"></div>
 		</figure>
-		<figure class="sketch contacts">
-			<div class="contacts--text"></div>
-			<div class="contacts--arrow"></div>
+		<figure class="contacts">
+			<div class="contacts__text"></div>
+			<div class="contacts__arrow"></div>
 		</figure>
 		<figure class="notepad">
-			<div class="notepad--height-adjuster"></div>
+			<div class="notepad__height-adjuster"></div>
 		</figure>
 		<figure class="pencil"></figure>
 	</div>
 	
 	
 	<!-- side bars with mail & telephone -->
-		<aside class="left">
-			<figure class="block">
-				<div class="block--icon">
-					<svg x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512">
-					<g>
-						<path d="M256,0C114.609,0,0,114.609,0,256c0,141.391,114.609,256,256,256c141.391,0,256-114.609,256-256
-							C512,114.609,397.391,0,256,0z M256,472c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z
-							"/>
-						<path d="M327.125,383.969c5.703,0.016,56.875-37.828,56.875-42.656s-57.266-40.905-62.219-40.905s-21.578,19.938-26.062,22.155
-							c-4.5,2.22-32.5,1.422-63.703-29.78c-31.219-31.188-41.875-67.109-41.875-72.75c0-5.641,26.031-23.062,26.75-27.156
-							c0.719-4.094-34.313-64.876-40-64.876S128,180.5,128,184.875s3.953,60.656,75.219,131.906S321.422,383.938,327.125,383.969z"/>
-					</g>
-					</svg>
-				</div>
-				<div class="block--caption">
-					<p>
-						Позвонить:
-					</p>
-					<p>
-						099 022 22 68
-					</p>
+		<aside class="sidebar sidebar--left">
+			<figure class="sidebar__block sidebar__block--phone sidebar__block--expanding">
+				<div class="sidebar__caption">
+					
+					<p>Позвонить:</p>
+	
+					<p>099 022 22 68</p>
 				</div>	
 			</figure>
-			<figure class="block">
-				<div class="block--icon">
-					<svg x="0px" y="0px" viewBox="0 0 493.332 493.332" >
-					<g>
-						<g>
-							<g>
-								<path d="M352.731,450.956c3.037,9.789-2.044,20.213-11.616,23.878c-35.811,13.709-69.294,18.498-112.873,18.498
-									c-117.663,0-221.147-84.347-221.147-223.275C7.095,125.46,112.003,0,272.2,0c124.735,0,214.036,85.764,214.036,204.845
-									c0,103.483-58.12,168.693-134.66,168.693c-33.327,0-57.419-17.007-60.955-54.582h-1.424c-21.963,36.15-53.86,54.582-91.43,54.582
-									c-46.082,0-79.376-34.022-79.376-92.142c0-86.475,63.769-165.147,165.841-165.147c18.691,0,38.9,2.795,55.909,7.172
-									c16.425,4.227,26.861,20.236,24.147,36.978l-16.972,104.695c-7.072,41.818-2.112,60.953,17.721,61.666
-									c30.475,0.711,68.762-38.272,68.762-119.786c0-92.15-59.543-163.732-169.41-163.732c-108.444,0-203.428,85.051-203.428,220.436
-									c0,118.369,75.834,185.708,181.448,185.708c27.489,0,56.203-4.51,80.853-13.214c5.863-2.07,12.315-1.662,17.872,1.126
-									c5.558,2.788,9.753,7.716,11.595,13.655L352.731,450.956z M293.954,181.362c0.534-3.626-1.892-7.027-5.496-7.696
-									c-4.413-0.819-9.536-1.426-15.573-1.426c-46.771,0-83.617,46.076-83.617,100.653c0,26.94,12.037,43.946,35.423,43.946
-									c26.231,0,53.876-33.31,60.265-74.425L293.954,181.362z"/>
-							</g>
-						</g>
-					</g>
-					</svg>
-				</div>
-				<div class="block--caption">
-					<p>
-						Написать:
-					</p>
-					<p>
-						borzilov.george@gmail.com
-					</p>
+			<figure class="sidebar__block sidebar__block--mail sidebar__block--expanding">
+				<div class="sidebar__caption">
+	
+					<p>Написать:</p>
+					
+					<p>borzilov.george@gmail.com</p>
 				</div>
 			</figure>
 			
 		</aside>
 	
-		<aside class="right">
-			<figure class="block">
-				<a href="cv/borzilov_cv.pdf" target="_blank">
-					<svg x="0px" y="0px" viewBox="0 0 482.14 482.14">
-					<g>
-						<path d="M142.024,310.194c0-8.007-5.556-12.782-15.359-12.782c-4.003,0-6.714,0.395-8.132,0.773v25.69
-							c1.679,0.378,3.743,0.504,6.588,0.504C135.57,324.379,142.024,319.1,142.024,310.194z"/>
-						<path d="M202.709,297.681c-4.39,0-7.227,0.379-8.905,0.772v56.896c1.679,0.394,4.39,0.394,6.841,0.394
-							c17.809,0.126,29.424-9.677,29.424-30.449C230.195,307.231,219.611,297.681,202.709,297.681z"/>
-						<path d="M315.458,0H121.811c-28.29,0-51.315,23.041-51.315,51.315v189.754h-5.012c-11.418,0-20.678,9.251-20.678,20.679v125.404
-							c0,11.427,9.259,20.677,20.678,20.677h5.012v22.995c0,28.305,23.025,51.315,51.315,51.315h264.223
-							c28.272,0,51.3-23.011,51.3-51.315V121.449L315.458,0z M99.053,284.379c6.06-1.024,14.578-1.796,26.579-1.796
-							c12.128,0,20.772,2.315,26.58,6.965c5.548,4.382,9.292,11.615,9.292,20.127c0,8.51-2.837,15.745-7.999,20.646
-							c-6.714,6.32-16.643,9.157-28.258,9.157c-2.585,0-4.902-0.128-6.714-0.379v31.096H99.053V284.379z M386.034,450.713H121.811
-							c-10.954,0-19.874-8.92-19.874-19.889v-22.995h246.31c11.42,0,20.679-9.25,20.679-20.677V261.748
-							c0-11.428-9.259-20.679-20.679-20.679h-246.31V51.315c0-10.938,8.921-19.858,19.874-19.858l181.89-0.19v67.233
-							c0,19.638,15.934,35.587,35.587,35.587l65.862-0.189l0.741,296.925C405.891,441.793,396.987,450.713,386.034,450.713z
-							 M174.065,369.801v-85.422c7.225-1.15,16.642-1.796,26.58-1.796c16.516,0,27.226,2.963,35.618,9.282
-							c9.031,6.714,14.704,17.416,14.704,32.781c0,16.643-6.06,28.133-14.453,35.224c-9.157,7.612-23.096,11.222-40.125,11.222
-							C186.191,371.092,178.966,370.446,174.065,369.801z M314.892,319.226v15.996h-31.23v34.973h-19.74v-86.966h53.16v16.122h-33.42
-							v19.875H314.892z"/>
-					</g>
-					</svg>
-				</a>
-			</figure>
-			
-			<figure class="block">
-				<a href="https://github.com/Borzilov">
-					<svg x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512">
-					<g>
-						<path d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M408.027,408.027
-							c-19.76,19.759-42.756,35.267-68.354,46.094c-6.502,2.75-13.105,5.164-19.801,7.246V423c0-20.167-6.916-35-20.75-44.5
-							c8.668-0.833,16.625-2,23.875-3.5s14.918-3.667,23-6.5c8.084-2.833,15.334-6.208,21.75-10.125c6.418-3.917,12.584-9,18.5-15.25
-							c5.918-6.25,10.875-13.333,14.875-21.25s7.168-17.417,9.5-28.5c2.334-11.083,3.5-23.292,3.5-36.625c0-25.833-8.416-47.833-25.25-66
-							c7.668-20,6.834-41.75-2.5-65.25l-6.25-0.75c-4.332-0.5-12.125,1.333-23.375,5.5s-23.875,11-37.875,20.5
-							c-19.832-5.5-40.416-8.25-61.749-8.25c-21.5,0-42,2.75-61.5,8.25c-8.833-6-17.208-10.958-25.125-14.875s-14.25-6.583-19-8
-							s-9.167-2.292-13.25-2.625s-6.708-0.417-7.875-0.25s-2,0.333-2.5,0.5c-9.333,23.667-10.167,45.417-2.5,65.25
-							c-16.833,18.167-25.25,40.167-25.25,66c0,13.333,1.167,25.542,3.5,36.625s5.5,20.583,9.5,28.5s8.958,15,14.875,21.25
-							s12.083,11.333,18.5,15.25s13.667,7.292,21.75,10.125s15.75,5,23,6.5s15.208,2.667,23.875,3.5c-13.667,9.333-20.5,24.167-20.5,44.5
-							v39.115c-7.549-2.247-14.99-4.902-22.3-7.994c-25.597-10.827-48.594-26.335-68.353-46.094
-							c-19.758-19.758-35.267-42.756-46.093-68.354C46.679,313.195,41,285.043,41,256s5.679-57.195,16.879-83.675
-							c10.827-25.597,26.335-48.594,46.093-68.353c19.758-19.759,42.756-35.267,68.353-46.093C198.805,46.679,226.957,41,256,41
-							s57.195,5.679,83.676,16.879c25.598,10.827,48.594,26.335,68.354,46.093c19.758,19.758,35.266,42.756,46.092,68.353
-							C465.32,198.805,471,226.957,471,256s-5.68,57.195-16.879,83.675C443.295,365.271,427.785,388.27,408.027,408.027z"/>
-					</g>
-					</svg>
-				</a>
-			</figure>
+		<aside class="sidebar sidebar--right">
+			<a class="sidebar__block sidebar__block--cv" href="cv/borzilov_cv.pdf" target="_blank" title="Скачать резюме"></a>
+		
+			<a class="sidebar__block sidebar__block--github" href="https://github.com/Borzilov" target="_blank" title="Перейти Github-аккаунту"></a>
 		</aside><!-- side bars with mail & telephone -->
 
 	<!--[if lt IE 9]>
