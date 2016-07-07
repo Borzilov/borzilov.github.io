@@ -37,6 +37,9 @@
 	
 		}
 	</script>
+	<style>
+		.main-wrap__loader-wrap{position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;text-align:center;color:#999;background-color:#fff}.main-wrap__loader{margin-top:20%;-webkit-transform:translateZ(0);transform:translateZ(0);font-size:10px;text-indent:-9999em;-webkit-animation:load7 1.8s ease-in-out -.16s infinite;animation:load7 1.8s ease-in-out -.16s infinite}.main-wrap__loader,.main-wrap__loader:after,.main-wrap__loader:before{-webkit-border-radius:50%;border-radius:50%;width:2.5em;height:2.5em;-webkit-animation-fill-mode:both;animation-fill-mode:both}.main-wrap__loader:after,.main-wrap__loader:before{content:'';position:absolute;top:0;-webkit-animation:load7 1.8s ease-in-out infinite;animation:load7 1.8s ease-in-out infinite}.main-wrap__loader:before{left:-3.5em;-webkit-animation-delay:-.32s;animation-delay:-.32s}.main-wrap__loader:after{left:3.5em}@-webkit-keyframes load7{0%,100%,80%{-webkit-box-shadow:0 2.5em 0 -1.3em;box-shadow:0 2.5em 0 -1.3em}40%{-webkit-box-shadow:0 2.5em 0 0;box-shadow:0 2.5em 0 0}}@keyframes load7{0%,100%,80%{-webkit-box-shadow:0 2.5em 0 -1.3em;box-shadow:0 2.5em 0 -1.3em}40%{-webkit-box-shadow:0 2.5em 0 0;box-shadow:0 2.5em 0 0}}
+	</style>
 </head>
 
 <body>
@@ -54,6 +57,7 @@
 
 			<nav class="main-header__nav main-nav">
 				<ul class="main-nav__items-wrap">
+
 					<li class="main-nav__item">
 						<button class="nav-button nav-button--small nav-button--main" data-title="{{main.text.tooltipes.about}}"
 										data-ng-click="main.methods.loadTemplate('about')">Главная</button>
@@ -69,6 +73,19 @@
 						<button class="nav-button nav-button--small nav-button--works" data-title="{{main.text.tooltipes.works}}"
 										data-ng-click="main.methods.loadTemplate('works')">Что я сделал</button>
 					</li>
+
+					<li class="main-nav__lang-wrap main-nav__lang-wrap--lower">
+						<button class="main-nav__lang-switch"
+										data-ng-class="{'main-nav__lang-switch--active': main.language == 'ru'}"
+										data-ng-disabled="main.language == 'ru'"
+										data-ng-click="main.methods.languageRequest('ru')">ру</button>
+
+						<button class="main-nav__lang-switch"
+										data-ng-class="{'main-nav__lang-switch--active': main.language == 'en'}"
+										data-ng-disabled="main.language == 'en'"
+										data-ng-click="main.methods.languageRequest('en')">en</button>
+					</li>
+
 				</ul>
 			</nav>
 		</header>
@@ -137,11 +154,13 @@
 		<footer class="main-wrap__footer main-footer">
 			<ul class="main-footer__inner">
 				<li class="main-footer__contact">
-					<address class="main-footer__icon main-footer__icon--phone">+380990222268</address>
+					<address class="main-footer__icon main-footer__icon--phone"
+						 data-ng-bind="main.text.about.contacts_phone">+380990222268</address>
 				</li>
 
 				<li class="main-footer__contact">
-					<address class="main-footer__icon main-footer__icon--mail">borzilov.george@gmail.com</address>
+					<address class="main-footer__icon main-footer__icon--mail"
+									 data-ng-bind="main.text.about.contacts_mail">borzilov.george@gmail.com</address>
 				</li>
 
 				<li class="main-footer__contact main-footer__contact--author">&copy; <span data-ng-bind="main.text.info.name">Георгий Борзилов</span></li>
@@ -174,14 +193,12 @@
 			var ms=document.createElement("link");ms.rel="stylesheet";
 			ms.href="css/main.min.css";document.getElementsByTagName("head")[0].appendChild(ms);
 	</script>
-		
-	<!-- Load Scripts -->
-	<script>var scr = {"scripts":[
-			{"src" : "libs/angular/angular.min.js", "async" : false},
-			{"src" : "libs/angular/angular-animate.min.js", "async" : false},
-			{"src" : "js/script.js", "async" : false},
-			]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
-	</script>
-	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script>window.angular || document.write('<script src="libs/angular/angular.min.js"><\/script>')</script>
+
+	<script src="libs/angular/angular-animate.min.js"></script>
+	<script src="js/script.js"></script>
+
 </body>
 </html>

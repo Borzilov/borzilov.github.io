@@ -1,4 +1,4 @@
-<header class="main-header">
+<header class="main-header main-header--index">
 	<div class="main-header__heading-wrap">
 		<h1 class="main-header__heading" data-ng-bind="main.text.info.name"></h1>
 		<h4 class="main-header__sub-heading" data-ng-bind="main.text.info.position"></h4>
@@ -7,6 +7,19 @@
 
 <nav class="main-nav">
 	<ul class="main-nav__items-wrap main-nav__items-wrap--centred">
+		<li class="main-nav__lang-wrap main-nav__lang-wrap--upper">
+			<button class="main-nav__lang-switch"
+				data-ng-class="{'main-nav__lang-switch--active': main.language == 'ru'}"
+				data-ng-disabled="main.language == 'ru'"
+				data-ng-click="main.methods.languageRequest('ru')">ру</button>
+
+			<button class="main-nav__lang-switch"
+				data-ng-class="{'main-nav__lang-switch--active': main.language == 'en'}"
+				data-ng-disabled="main.language == 'en'"
+				data-ng-click="main.methods.languageRequest('en')">en</button>
+		</li>
+
+
 		<li class="main-nav__item">
 			<button class="nav-button nav-button--big nav-button--main"
 			data-ng-click="main.methods.loadTemplate('about')">

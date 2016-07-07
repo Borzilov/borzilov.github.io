@@ -1,0 +1,32 @@
+{
+  "info": {
+    "name" : "George Borzilov",
+    "position" : "frontend developer"
+  },
+  "tooltipes" : {
+    "about": "About me",
+    "skills": "My skills",
+    "works" : "Samples"
+  },
+  "about" : {
+    "text": ["Hi and welcome to my page!",
+      "Despite on the relatively little experience in frontend development (about 1.5 years), I've managed to understand that this is my way :) and this mini-site can be used to observe my professional growth.",
+      "Like any responsible developer I try to keep track of the latest events in this area and to develop myself consequently",
+      "If you have any questions please call or email me - I'd love to communicate with you.",
+      "In any case, thanks for visiting!"],
+    "born": "Born date",
+    "born_date": "09 june 1985",
+    "contacts": "Contacts",
+    "contacts_phone": "+380990222268",
+    "contacts_mail": "borzilov.george@gmail.com",
+    "residence": "Living at",
+    "residence_place": "Kyiv",
+    "employer": "Employer",
+    "cv": "CV in PDF"
+  },
+  "skills" : {
+    "main" : "Those technologies I use in my work",
+    "additional": "Additional tools that helps me"
+  },
+  "work_sample": "See live sample"
+}

@@ -3,26 +3,34 @@
 	<div class="about__info">
 
 		<p class="about__row">
-			<span class="about__title">Я родился</span>
-			<span class="about__description">09 июня 1985</span>
+			<span class="about__title"
+				data-ng-bind="main.text.about.born"></span>
+			<span class="about__description"
+						data-ng-bind="main.text.about.born_date"></span>
 		</p>
 
 		<p class="about__row">
-			<span class="about__title">Мои контакты</span>
-			<span class="about__description">+30809990222268</span>
+			<span class="about__title"
+						data-ng-bind="main.text.about.contacts"></span>
+			<span class="about__description"
+						data-ng-bind="main.text.about.contacts_phone"></span>
 		</p>
 
 		<p class="about__row">
-			<span class="about__description">borzilov.george@gmail.com</span>
+			<span class="about__description"
+						data-ng-bind="main.text.about.contacts_mail"></span>
 		</p>
 
 		<p class="about__row">
-			<span class="about__title">Проживаю</span>
-			<span class="about__description">г. Киев</span>
+			<span class="about__title"
+						data-ng-bind="main.text.about.residence"></span>
+			<span class="about__description"
+						data-ng-bind="main.text.about.residence_place"></span>
 		</p>
 
 		<p class="about__row">
-			<span class="about__title">Сейчас работаю</span>
+			<span class="about__title"
+						data-ng-bind="main.text.about.employer"></span>
 			<span class="about__description"><a href="//slavpeople.com" target="_blank" rel="noopener">slavpeople.com</a></span>
 		</p>
 
@@ -32,5 +40,6 @@
 	<p class="about__text"
 		data-ng-repeat="text in main.text.about.text" data-ng-bind="text"></p>
 
-	<a class="about__cv-link" href="/cv/borzilov_cv.pdf" target="_blank">резюме в PDF</a>
+	<a class="about__cv-link" href="{{main.cvLink}}" target="_blank"
+		 data-ng-bind="main.text.about.cv"></a>
 </section>

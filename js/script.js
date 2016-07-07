@@ -1,1 +1,175 @@
-!function(){"use strict";function e(e){function i(e){a.views="/views/"+e+".html",a.header||(a.header=!0)}function t(i){a.loader=!0,e.get("/lang/lang_"+i+".json").then(function(e){a.text=e.data}),a.loader=!1}var a=this;a.views="/views/index.html",a.header=!1,a.loader=!0,t("ru"),a.skills={main:[{name:"HTML5",val:"87%"},{name:"CSS3",val:"87%"},{name:"SASS",val:"80%"},{name:"Twitter Bootstrap",val:"85%"},{name:"JavaScript",val:"60%"},{name:"jQuery",val:"75%"},{name:"AngularJS",val:"50%"}],additional:["Git","Gulp","Photoshop","Jira"]},a.text={},a.methods={loadTemplate:i,languageRequest:t}}function i(e){return{restrict:"A",templateUrl:"/views/partials/slider.html",link:function(i,t,a){function l(e){if(!n.slides.isActive){var i,t=n.slides.current,a=r.length;"forward"==e?i=t==a-1?0:++t:"backward"==e&&(i=0==t?a-1:--t),n.slides.current=i,n.slides.direction={},n.slides.direction[e]=!0}}var n=i,r=[{img:"/img/work_thumb/interwood.jpg",link:"works/interwood/index.html",alt:'"interwood" live sample'},{img:"/img/work_thumb/sedona@1x.jpg",link:"works/sedona/index.html",alt:'"sedona" live sample'},{img:"/img/work_thumb/bicycle.jpg",link:"works/bicycle/index.html",alt:'"bicycle" live sample'},{img:"/img//work_thumb/axit.jpg",link:"works/axit/index.html",alt:'"axit" l/ve sample'},{img:"/img/work_thumb/unique.jpg",link:"works/unique-tech/index.html",alt:'"unique tech" live sample'}];n.switcher=1,n.slides={set:r,direction:{backward:!1,forward:!1},current:0,isActive:!1},n.methods={sliderChange:l},e.on("leave",t,function(e,i){"start"==i?n.slides.isActive=!0:"close"==i&&(n.slides.isActive=!1)})}}}angular.module("personalPage",["ngAnimate"]).controller("cvMainCtrl",["$http",e]).directive("sliderDirective",["$animate",i])}();
+(function(){
+    'use strict';
+    angular.module('personalPage', ['ngAnimate'])
+        .controller('cvMainCtrl', ['$http', mainCtrl])
+        //.controller('cvSliderCtrl', [sliderCtrl])
+        .directive('sliderDirective', ['$animate', slider]);
+
+
+
+function mainCtrl ($http) {
+    var controller = this;
+
+    controller.views = '/views/index.html';
+    controller.header = false;
+    controller.loader = true;
+    controller.language = 'en';
+    languageRequest(controller.language);
+
+
+    controller.skills = {
+        main: [
+            {
+                name: 'HTML5',
+                val: '87%'
+            },
+            {
+                name: 'CSS3',
+                val: '87%'
+            },
+            {
+                name: 'SASS',
+                val: '80%'
+            },
+            {
+                name: 'Twitter Bootstrap',
+                val: '85%'
+            },
+            {
+                name: 'JavaScript',
+                val: '60%'
+            },
+            {
+                name: 'jQuery',
+                val: '75%'
+            },
+            {
+                name: 'AngularJS',
+                val: '50%'
+            }
+        ],
+        additional: ['Git', 'Gulp', 'Photoshop', 'Jira']
+    }
+    controller.text = {};
+
+    controller.methods = {
+        loadTemplate : loadTemplate,
+        languageRequest: languageRequest
+    };
+
+
+    function loadTemplate (template) {
+        controller.views = '/views/' + template + '.html';
+
+        if (!controller.header) {
+            controller.header = true;
+        }
+    };
+
+    function languageRequest (lang) {
+
+        controller.loader = true;
+
+        $http.get('/lang/lang_' + lang + '.json').then(function(response){
+            controller.text = response.data;
+            controller.language = lang;
+            controller.cvLink = '/cv/borzilov_cv(' + lang +').pdf';
+        });
+        controller.loader = false;
+    };
+
+};
+
+function slider ($animate) {
+    return {
+        restrict: "A",
+        templateUrl: "/views/partials/slider.html",
+        link: function (scope, element, attrs){
+            var controller = scope,
+                slidesSet = [
+                    {
+                        img: '/img/work_thumb/interwood.jpg',
+                        link: 'works/interwood/index.html',
+                        alt: '"interwood" live sample'
+                    },
+                    {
+                        img: '/img/work_thumb/sedona@1x.jpg',
+                        link: 'works/sedona/index.html',
+                        alt: '"sedona" live sample'
+                    },
+                    {
+                        img: '/img/work_thumb/bicycle.jpg',
+                        link: 'works/bicycle/index.html',
+                        alt: '"bicycle" live sample'
+                    },
+                    {
+                        img: '/img//work_thumb/axit.jpg',
+                        link: 'works/axit/index.html',
+                        alt: '"axit" l/ve sample'
+                    },
+                    {
+                        img: '/img/work_thumb/unique.jpg',
+                        link: 'works/unique-tech/index.html',
+                        alt: '"unique tech" live sample'
+                    }
+                ];
+
+            controller.switcher = 1;
+            controller.slides = {
+                set: slidesSet,
+                //set: slidesSet.slice(0,1),
+                direction: {
+                    backward: false,
+                    forward: false
+                },
+                current: 0,
+                isActive: false
+            };
+
+            controller.methods = {
+                //sliderBackwardsChange : sliderBackwardsChange,
+                //sliderForwardChange: sliderForwardChange,
+                sliderChange: sliderChange
+            };
+
+            function sliderChange (direction) {
+
+                if(controller.slides.isActive) return;
+
+                var targetSlideIndex,
+                    currentSlideIndex = controller.slides.current,
+                    totalSlides = slidesSet.length;
+
+                if (direction == 'forward'){
+                    targetSlideIndex = ( currentSlideIndex == totalSlides - 1 ) ? 0 : ++currentSlideIndex;
+
+                } else if (direction == 'backward') {
+
+                    targetSlideIndex = ( currentSlideIndex == 0 ) ? totalSlides - 1 : --currentSlideIndex;
+                }
+
+                controller.slides.current = targetSlideIndex;
+                controller.slides.direction = {};
+                controller.slides.direction[direction] = true;
+            };
+
+
+            $animate.on('leave', element,
+                function callback(element, phase) {
+                    if (phase == 'start') {
+                        controller.slides.isActive = true;
+                    } else if (phase == 'close') {
+                        controller.slides.isActive = false;
+                    }
+                }
+            );
+
+            // function sliderForwardChange () {
+            //     var arr = slidesSet;
+
+            //     arr.push(arr.shift());
+            // };
+        }
+    };
+};
+})();
