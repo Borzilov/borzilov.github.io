@@ -1,0 +1,31 @@
+<header class="main-header">
+	<div class="main-header__heading-wrap">
+		<h1 class="main-header__heading" data-ng-bind="main.text.info.name"></h1>
+		<h4 class="main-header__sub-heading" data-ng-bind="main.text.info.position"></h4>
+	</div>
+</header>
+
+<nav class="main-nav">
+	<ul class="main-nav__items-wrap main-nav__items-wrap--centred">
+		<li class="main-nav__item">
+			<button class="nav-button nav-button--big nav-button--main"
+			data-ng-click="main.methods.loadTemplate('about')">
+				<span class="nav-button__caption" data-ng-bind="main.text.tooltipes.about"></span>
+			</button>
+		</li>
+
+		<li class="main-nav__item">
+			<button class="nav-button nav-button--big nav-button--skills"
+			data-ng-click="main.methods.loadTemplate('skills')">
+				<span class="nav-button__caption" data-ng-bind="main.text.tooltipes.skills"></span>
+			</button>
+		</li>
+
+		<li class="main-nav__item">
+			<button class="nav-button nav-button--big nav-button--works"
+			data-ng-click="main.methods.loadTemplate('works')">
+				<span class="nav-button__caption" data-ng-bind="main.text.tooltipes.works"></span>
+			</button>
+		</li>
+	</ul>
+</nav>

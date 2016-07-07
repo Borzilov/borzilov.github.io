@@ -1,0 +1,29 @@
+<section class="skills">
+
+	<h2 class="skills__title">Технологии, используемые мной</h2>
+	<ul class="skills__wrapper">
+
+		<li class="skills__item"
+			data-ng-repeat="skill in main.skills.main">
+			<p class="skills__header" data-ng-bind="skill.name"></p>
+			<figure class="skills__progress">
+				<div class="skills__scale-wrap" data-ng-style="{width: skill.val}">
+					<div class="skills__scale">
+						<div class="skills__label" data-ng-bind="skill.val"></div>
+					</div>
+				</div>
+			</figure>
+		</li>
+
+	</ul>
+
+	<h2 class="skills__sub-title">Дополнительные инструменты для облегчения работы</h2>
+
+	<ul class="skills__additional-wrap">
+		<li class="skills__additional-item"
+			data-ng-repeat="item in main.skills.additional"
+			data-ng-bind="item"
+		></li>
+	</ul>
+
+</section>

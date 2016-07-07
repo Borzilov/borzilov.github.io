@@ -1,0 +1,46 @@
+<div class="slider__inner">
+	<div class="slider__monitor">
+
+
+		<ul class="slider__container"
+				data-ng-class="[{'slider__direction--forward': slides.direction.forward},
+								{'slider__direction--backward': slides.direction.backward}]">
+			<!-- <li class="slider__item"
+					data-ng-class="[
+						{'slider__slide-visible': $index == 0},
+						{'slider__slide-visible': $index == 0},
+						{'slider__slide-animating slider__slide-animating--backward': $index != 0 && slides.backward},
+						{'slider__slide-animating slider__slide-animating--forward': $index != 0 && slides.forward}
+					]"
+					data-ng-repeat="slide in slides.set"
+					ng-animate="'animate'"> -->
+
+			<li class="slider__item"
+				data-ng-if="$index == slides.current"
+				data-ng-repeat="slide in slides.set">
+			
+				<a class="slider__link" href="{{slide.link}}"  target="_blank">
+					<img src="{{slide.img}}" alt="{{slide.alt}}" class="slider__thumbnail">
+
+					<span class="slider__overlay">
+						<span class="slider__tooltipe">Посмотреть пример сайта</span>
+					</span>
+				</a>
+			</li>
+
+		</ul>
+	</div>
+
+
+	<ul class="slider__controls-wrap">
+		<li class="slider__control-item slider__control-item--backward">
+			<button class="slider__control-button"
+					data-ng-click="methods.sliderChange('backward')">BACK</button>
+		</li>
+
+		<li class="slider__control-item slider__control-item--forward">
+			<button class="slider__control-button"
+					data-ng-click="methods.sliderChange('forward')">FORWARD</button>
+		</li>
+	</ul>
+</div>

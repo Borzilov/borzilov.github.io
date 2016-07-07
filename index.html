@@ -13,125 +13,137 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
-	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<link rel="icon" href="" type="image/x-icon">
 
-	<script>
-		if (/borzilov.github/gi.test(window.location)) {
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+	<meta property="og:title" content="George Borzilov">
+	<meta property="og:description" content="frontend developer">
+	<meta property="og:image" content="/img/thumb.jpg">
+	<meta property="og:url" content="http://borzilov.github.io">
+	<meta name="twitter:card" content="/img/thumb.jpg">
+
 	
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	
-			ga('create', 'UA-80241223-1', 'auto');
-			ga('send', 'pageview');
-	
-		}
-	</script>
 </head>
 
 <body>
-	<div class="graphic-wrapper clearfix">
+	<!--<div class="main-wrap">-->
+	<div class="main-wrap"
+			data-ng-app="personalPage"
+			data-ng-controller="cvMainCtrl as main">
 
-		<div class="content-wrapper">
-			<div class="content-wrapper__inner">
-				<!-- Header -->
-				<header class="main-header">
-					<div class="main-header__wrapper">
-						<h1 class="main-header__title">Георгий Борзилов</h1>
-						<p class="main-header__subtitle">
-							<!-- <span class="animated flash">начинающий</span>
-							<br> -->
-							<span>frontend developer</span>
-						</p>
-					</div>
-					
-				</header>
-				<!-- end header -->
-
-				<!-- main section -->
-				<main class="main-content">
-					<div class="main-content__wrapper">
-						
-						<p class="main-content__text">
-							<span class='main-content__greetings'>Здравствуйте!</span>
-							Мой сайт только в процессе разработки, поэтому пока могу предложить посмотреть несколько проектов сверстанных мной.
-						</p>
-						<!-- works -->
-						<ul class="main-content__work work">
-							<li class="work__item">
-								<img src="img/work_thumb/interwood.jpg" alt="Пример сайта">
-								<div class="work__overlay">
-									<a href="works/interwood/index.html">Посмотреть</a>
-								</div>
-							</li>
-							<li class="work__item">
-								<img src="img/work_thumb/unique.jpg" alt="Пример сайта">
-								<div class="work__overlay">
-									<a href="works/unique-tech/index.html">Посмотреть</a>
-								</div>
-							</li>
-							<li class="work__item">
-								<img src="img/work_thumb/bicycle.jpg" alt="Пример сайта">
-								<div class="work__overlay">
-									<a href="works/bicycle/index.html">Посмотреть</a>
-								</div>
-							</li>
-							<li class="work__item">
-								<img src="img/work_thumb/axit.jpg" alt="Пример сайта">
-								<div class="work__overlay">
-									<a href="works/axit/index.html">Посмотреть</a>
-								</div>
-							</li>
-						</ul>
-					</div>
-				
-				</main><!-- end main section  -->
+		<header class="main-wrap__header main-header"
+			data-ng-if="main.header">
+			<div class="main-header__title-wrap">
+				<h1 class="main-header__heading" data-ng-bind="main.text.info.name">Георгий Борзилов</h1>
+				<h4 class="main-header__sub-heading" data-ng-bind="main.text.info.position">фронтенд разработчик</h4>
 			</div>
-		</div>
-		
-		<figure class="cv">
-			<div class="cv__text"></div>
-			<div class="cv__arrow"></div>
+
+			<nav class="main-header__nav main-nav">
+				<ul class="main-nav__items-wrap">
+					<li class="main-nav__item">
+						<button class="nav-button nav-button--small nav-button--main" data-title="{{main.text.tooltipes.about}}"
+										data-ng-click="main.methods.loadTemplate('about')">Главная</button>
+					</li>
+
+					<li class="main-nav__item">
+						<button class="nav-button nav-button--small nav-button--skills" data-title='{{main.text.tooltipes.skills}}'
+										data-ng-click="main.methods.loadTemplate('skills')"
+										>Что я умею</button>
+					</li>
+
+					<li class="main-nav__item">
+						<button class="nav-button nav-button--small nav-button--works" data-title="{{main.text.tooltipes.works}}"
+										data-ng-click="main.methods.loadTemplate('works')">Что я сделал</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+
+		<main class="main-wrap__column-wrapper">
+
+			<article class="main-wrap__col main-wrap__col--right"
+				data-ng-include="main.views">
+				<section class="about">
+
+					<div class="about__info">
+
+						<p class="about__row">
+							<span class="about__title">Я родился</span>
+							<span class="about__description">09 июня 1985</span>
+						</p>
+
+						<p class="about__row">
+							<span class="about__title">Мои контакты</span>
+							<span class="about__description">+30809990222268</span>
+						</p>
+
+						<p class="about__row">
+							<span class="about__description">borzilov.george@gmail.com</span>
+						</p>
+
+						<p class="about__row">
+							<span class="about__title">Проживаю</span>
+							<span class="about__description">г. Киев</span>
+						</p>
+
+						<p class="about__row">
+							<span class="about__title">Сейчас работаю</span>
+							<span class="about__description"><a href="//slavpeople.com" target="_blank" rel="noopener">slavpeople.com</a></span>
+						</p>
+
+					</div>
+
+
+					<p class="about__text">Привет и добро пожаловать на мою страницу!</p>
+
+					<p class="about__text">Несмотря на сравнительно небольшой опыт в фронтенд разработке (около 1,5 лет), я уже успел понять, что это мое :) , а на этом мини-сайте можно наблюдать мой путь развития как специалиста.</p>
+
+					<p class="about__text">Как любой ответственный разработчик я стараюсь быть в курсе последних событий в выбранном направлении и, соответственно, развиваться самому.</p>
+					
+					<p class="about__text">Если у Вас возникли какие-то вопросы звоните/пишите – с удовольствием с Вами пообщаюсь.</p>
+
+					<p class="about__text">В любом случае спасибо, что заглянули!</p>
+
+					<a class="about__cv-link" href="/cv/borzilov_cv.pdf" target="_blank">резюме в PDF</a>
+				</section>
+			</article>
+
+
+			<aside class="main-wrap__col main-wrap__col--left"
+						data-ng-class="{'to-header' : main.header}">
+				<figure class="img-wrap">
+					<img src="img/boy_2x.png" width="370"	height="800">
+				</figure>
+
+			</aside>
+		</main>
+
+
+		<footer class="main-wrap__footer main-footer">
+			<ul class="main-footer__inner">
+				<li class="main-footer__contact">
+					<address class="main-footer__icon main-footer__icon--phone">+380990222268</address>
+				</li>
+
+				<li class="main-footer__contact">
+					<address class="main-footer__icon main-footer__icon--mail">borzilov.george@gmail.com</address>
+				</li>
+
+				<li class="main-footer__contact main-footer__contact--author">&copy; <span data-ng-bind="main.text.info.name">Георгий Борзилов</span></li>
+
+			</ul>
+		</footer>
+
+		<figure class="main-wrap__loader-wrap"
+				data-ng-if="main.loader">
+			<figcaption class="main-wrap__loader">Loading...</figcaption>
 		</figure>
-		<figure class="contacts">
-			<div class="contacts__text"></div>
-			<div class="contacts__arrow"></div>
-		</figure>
-		<figure class="notepad">
-			<div class="notepad__height-adjuster"></div>
-		</figure>
-		<figure class="pencil"></figure>
+	
 	</div>
 	
-	
-	<!-- side bars with mail & telephone -->
-		<aside class="sidebar sidebar--left">
-			<figure class="sidebar__block sidebar__block--phone sidebar__block--expanding">
-				<div class="sidebar__caption">
-					
-					<p>Позвонить:</p>
-	
-					<p>099 022 22 68</p>
-				</div>	
-			</figure>
-			<figure class="sidebar__block sidebar__block--mail sidebar__block--expanding">
-				<div class="sidebar__caption">
-	
-					<p>Написать:</p>
-					
-					<p>borzilov.george@gmail.com</p>
-				</div>
-			</figure>
-			
-		</aside>
-	
-		<aside class="sidebar sidebar--right">
-			<a class="sidebar__block sidebar__block--cv" href="cv/borzilov_cv.pdf" target="_blank" title="Скачать резюме"></a>
-		
-			<a class="sidebar__block sidebar__block--github" href="https://github.com/Borzilov" target="_blank" title="Перейти Github-аккаунту"></a>
-		</aside><!-- side bars with mail & telephone -->
 
 	<!--[if lt IE 9]>
 	<script src="libs/html5shiv/es5-shim.min.js"></script>
@@ -143,8 +155,8 @@
 	<!-- Load CSS -->
 	<script>
 			//Load Libs CSS
-			var ms=document.createElement("link");ms.rel="stylesheet";
-			ms.href="libs/normalize-css/normalize.css";document.getElementsByTagName("head")[0].appendChild(ms);
+			/*var ms=document.createElement("link");ms.rel="stylesheet";
+			ms.href="libs/normalize-css/normalize.css";document.getElementsByTagName("head")[0].appendChild(ms);*/
 			
 			//User Styles + Media Queries
 			var ms=document.createElement("link");ms.rel="stylesheet";
@@ -153,7 +165,9 @@
 		
 	<!-- Load Scripts -->
 	<script>var scr = {"scripts":[
-			{"src" : "libs/modernizr/modernizr.js", "async" : false},
+			{"src" : "libs/angular/angular.min.js", "async" : false},
+			{"src" : "libs/angular/angular-animate.min.js", "async" : false},
+			{"src" : "js/script.js", "async" : false},
 			]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
 	</script>
 	
